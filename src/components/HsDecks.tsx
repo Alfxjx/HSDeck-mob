@@ -1,23 +1,31 @@
-import {highlanderMageDeck, bigSpellMageDeck} from '../decks/index';
-import { encode, decode } from "../decks/useDeck";
+import { useEffect, useState } from 'react';
+import { IDeck, parseDeck } from "../decks/useDeck";
+import { HsTile } from './HsTile';
 
-export const HsDecks = () => {
+export const HsDecks = ({deckString} : {deckString: string}) => {
+
+    const [deckObj, setDeckObj] = useState<IDeck>();
+
+    useEffect(() => {
+        async function getDeck() {
+            const deck = await parseDeck(deckString, 'zhCN');
+            console.log(deck);
+            setDeckObj(deck);
+        }
+        getDeck();
+    }, [])
+
     return (
-        <div>
-            <h1>Hearthstone Decks</h1>
-            <p>
-                This is a simple example of using the Hearthstone Decks API.
-            </p>
-            <h2>Highlander Mage Deck</h2>
-            <p>
-                {highlanderMageDeck}
-            </p>
-            <p>{JSON.stringify(decode(highlanderMageDeck))}</p>
-            <h2>Big Spell Mage Deck</h2>
-            <p>
-                {bigSpellMageDeck}
-            </p>
-            <p>{JSON.stringify(decode(bigSpellMageDeck))}</p>
+        <div className='py-2'>
+            <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-start'>
+                    {deckObj?.cards.map(card => {
+                        return (
+                            <HsTile card={card} key={card.dbfid} />
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     );
 }
