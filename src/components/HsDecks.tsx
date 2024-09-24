@@ -9,11 +9,10 @@ export const HsDecks = ({deckString} : {deckString: string}) => {
     useEffect(() => {
         async function getDeck() {
             const deck = await parseDeck(deckString, 'zhCN');
-            console.log(deck);
             setDeckObj(deck);
         }
         getDeck();
-    }, [])
+    }, [deckString])
 
     return (
         <div className='py-2'>

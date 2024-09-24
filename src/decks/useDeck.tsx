@@ -41,7 +41,7 @@ export async function getLatestJSON(locale: availableLocales = 'zhCN'): Promise<
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Failed to fetch JSON:', error);
+        console.error('加载全部卡组信息失败:', error);
         throw error;
     }
 }

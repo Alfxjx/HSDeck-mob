@@ -5,17 +5,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster"
 import './index.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Toaster />
   </React.StrictMode>,
 )
