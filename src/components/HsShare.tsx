@@ -1,18 +1,27 @@
+import moment from 'moment';
 import { QRCodeSVG } from 'qrcode.react';
 
 interface IShareProps {
     deckString: string;
+    hero: string;
+    format: string;
     deckName?: string;
     userName?: string;
 }
 
-export function HsShare({ deckString, deckName, userName }: IShareProps) {
+export function HsShare({ deckString, deckName, userName, format, hero }: IShareProps) {
     const url = `${window.location.protocol}://${window.location.host}/?code=${encodeURIComponent(deckString)}`;
     return (
-        <div className='flex flex-col items-start space-y-1 mt-2 text-sm font-bold text-gray-900'>
-            {deckName && <p>{deckName}</p>}
-            {userName && <p>作者：{userName}</p>}
-            <QRCodeSVG value={url} />
+        <div className='w-[90%] flex items-start justify-center space-x-4 mt-2 text-sm font-bold text-gray-700'>
+            <div className="flex-1 flex-grow-1">
+                <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>卡组：{deckName ? deckName : '自定义套牌'}</p>
+                <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>作者： {userName ? userName : '匿名'} </p>
+                <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>类型： {hero + '@' + format} </p>
+                <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>日期： {moment().format('YYYY-MM-DD')} </p>
+            </div>
+            <div className='flex-0 flex-grow-0'>
+                <QRCodeSVG value={url} />
+            </div>
         </div>
     )
 }

@@ -19,9 +19,13 @@
     "clipboard": "^2.0.11",
     "clsx": "^2.1.1",
     "deckstrings": "^3.1.2",
+    "dom-to-image-more": "^3.4.5",
+    "file-saver": "^2.0.5",
     "hearthstonejson-client": "^1.16.0",
     "hsdeck-mob": "file:",
+    "html2canvas": "^1.4.1",
     "lucide-react": "^0.445.0",
+    "moment": "^2.30.1",
     "qrcode.react": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -32,6 +36,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^22.5.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
