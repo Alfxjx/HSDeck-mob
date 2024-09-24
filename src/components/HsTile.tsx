@@ -45,7 +45,7 @@ function BaseTile({ color, count, cost, name, bgUrl, hasSideboards }: IBaseTileP
                     }}
                 >
                     <p className='h-[24px] w-[30px] flex justify-center items-center'>{cost}</p>
-                    <p className='w-[120px] text-nowrap text-ellipsis overflow-hidden'>{name}</p>
+                    <p className='w-[120px] text-nowrap whitespace-nowrap text-ellipsis overflow-hidden'>{name}</p>
                 </div>
                 <div className="overflow-hidden absolute right-[-30px]">
                     <img
