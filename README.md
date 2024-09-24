@@ -1,30 +1,9 @@
-# React + TypeScript + Vite
+# hs.abandon.work
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+于是趁着最近国服要来了 我做了一个分享工具用来方便分享卡组！
 
-Currently, two official plugins are available:
+1. 可以输入卡组名称和作者，让你的地沟油卡组万古流芳（
+2. 粘贴游戏代码，自动解析展示，牛牛和奇利亚斯都能看
+3. 分享截图，二维码可以跳转回来，下面复制代码
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+感觉功能有点简陋，我想来想去是想做一个手机端组卡的工具，用游戏ui组卡实在是不够方便。官网的那个组卡工具好是好，加载有点慢。 先做一个mvp版本出来，组卡工具后面划水的时候慢慢开发吧
