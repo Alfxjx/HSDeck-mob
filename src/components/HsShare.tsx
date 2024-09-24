@@ -10,7 +10,7 @@ interface IShareProps {
 }
 
 export function HsShare({ deckString, deckName, userName, format, hero }: IShareProps) {
-    const url = `${window.location.protocol}://${window.location.host}/?code=${encodeURIComponent(deckString)}`;
+    const url = `${window.location.protocol}//${window.location.host}/?code=${encodeURIComponent(deckString)}`;
     return (
         <div className='w-[90%] flex items-start justify-center space-x-4 mt-2 text-sm font-bold text-gray-700'>
             <div className="flex-1 flex-grow-1">

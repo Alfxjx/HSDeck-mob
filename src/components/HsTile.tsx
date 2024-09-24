@@ -30,7 +30,7 @@ function getBgColor(card: IBaseDeckItem) {
 
 function BaseTile({ color, count, cost, name, bgUrl, hasSideboards }: IBaseTileProps) {
     return (
-        <div className='flex justify-start items-center text-gray-200 text-sm font-sans'
+        <div className='flex justify-start items-center text-gray-200 text-xs font-sans'
             style={{
                 textShadow: '1px 1px 2px #666'
             }}
@@ -45,7 +45,7 @@ function BaseTile({ color, count, cost, name, bgUrl, hasSideboards }: IBaseTileP
                     }}
                 >
                     <p className='h-[24px] w-[30px] flex justify-center items-center'>{cost}</p>
-                    <p className='max-w-[100px] text-nowrap text-ellipsis overflow-hidden'>{name}</p>
+                    <p className='w-[120px] text-nowrap text-ellipsis overflow-hidden'>{name}</p>
                 </div>
                 <div className="overflow-hidden absolute right-[-30px]">
                     <img

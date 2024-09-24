@@ -62,7 +62,7 @@ export function HsParser({ onCodeSubmit }: {
     useEffect(() => {
         const updateRows = () => {
             const viewportHeight = window.innerHeight;
-            const calculatedRows = Math.floor(viewportHeight / 50); // 50px per row as an example
+            const calculatedRows = Math.floor(viewportHeight / 50) - 3; // 50px per row as an example
             setRows(calculatedRows);
         };
 
