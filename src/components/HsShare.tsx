@@ -10,7 +10,7 @@ interface IShareProps {
 }
 
 export function HsShare({ deckString, deckName, userName, format, hero }: IShareProps) {
-    const url = `${window.location.protocol}//${window.location.host}/?code=${encodeURIComponent(deckString)}`;
+    const url = `${window.location.protocol}//${window.location.host}/?code=${encodeURIComponent(deckString)}&deckName=${encodeURIComponent(deckName ? deckName : '自定义套牌')}&userName=${encodeURIComponent(userName ? userName : '匿名')}`;
     return (
         <div className='w-[90%] flex items-start justify-center space-x-4 mt-2 text-sm font-bold text-gray-700'>
             <div className='flex-0 flex-grow-0'>
@@ -22,7 +22,7 @@ export function HsShare({ deckString, deckName, userName, format, hero }: IShare
                 <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>类型： {hero + '@' + format} </p>
                 <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>日期： {moment().format('YYYY-MM-DD')} </p>
             </div>
-            
+
         </div>
     )
 }

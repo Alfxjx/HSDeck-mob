@@ -12,6 +12,7 @@ import { HsShare } from './components/HsShare';
 import './App.css'
 import { IDeck, parseDeck } from './decks/useDeck';
 import { FormatType } from 'deckstrings';
+import { isWeixinBrowser } from './lib/utils';
 
 function App() {
 
@@ -154,7 +155,7 @@ function App() {
         code && (
           <div className='flex-0 actions flex justify-start items-start sticky bottom-0 w-full bg-slate-300 z-20'
             style={{
-              paddingBottom: 'env(safe-area-inset-bottom)'
+              paddingBottom: isWeixinBrowser() ? '34px' : '0'
             }}
           >
             <div className='flex-1 bg-slate-300 h-[36px] flex justify-start items-center'>
