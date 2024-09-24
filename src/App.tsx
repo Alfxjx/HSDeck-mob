@@ -152,7 +152,11 @@ function App() {
 
       {
         code && (
-          <div className='flex-0 actions flex justify-start items-center pt-2 pb-6 sticky bottom-0 w-full bg-slate-300 z-20'>
+          <div className='flex-0 actions flex justify-start items-start sticky bottom-0 w-full bg-slate-300 z-20'
+            style={{
+              paddingBottom: 'env(safe - area - inset - bottom)'
+            }}
+          >
             <div className='flex-1 bg-slate-300 h-[36px] flex justify-start items-center'>
               <a href='https://github.com/alfxjx' target='_blank' rel='noreferrer' className='pl-4 pr-2'><Github size={16} /></a>
               <span className='text-sm text-blue-600 ml-2'>v{process.env.VERSION}</span>
