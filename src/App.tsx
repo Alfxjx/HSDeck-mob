@@ -154,7 +154,7 @@ function App() {
         code && (
           <div className='flex-0 actions flex justify-start items-start sticky bottom-0 w-full bg-slate-300 z-20'
             style={{
-              paddingBottom: 'env(safe - area - inset - bottom)'
+              paddingBottom: 'env(safe-area-inset-bottom)'
             }}
           >
             <div className='flex-1 bg-slate-300 h-[36px] flex justify-start items-center'>
