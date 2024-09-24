@@ -107,17 +107,9 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col items-center h-screen w-screen overflow-hidden'>
+    <div className='flex flex-col items-center min-h-screen w-screen pt-4'>
 
-      <div className='flex-0 actions flex justify-center items-center py-2 sticky top-0 w-full bg-slate-200 z-20'>
-        <span>炉石卡牌分享</span>
-        <span className='text-sm text-yellow-600 ml-2'>v{process.env.VERSION}</span>
-        <span className='absolute right-6'>
-          <a href='https://github.com/alfxjx' target='_blank' rel='noreferrer'><Github size={14} /></a>
-        </span>
-      </div>
-
-      <div className='flex-1 overflow-y-scroll w-full'>
+      <div className='flex-1 w-full'>
         {!code && (
           <HsParser onCodeSubmit={handleCode} />
         )}
@@ -138,13 +130,19 @@ function App() {
 
       {
         code && (
-          <div className='flex-0 actions flex justify-around items-center py-2 sticky bottom-0 w-full bg-white z-20'>
-            <Button className='' id='share-btn' data-clipboard-action="copy" data-clipboard-text={decodeURIComponent(code)} variant={'outline'}>
-              <Copy size={14} className='mr-2' />复制代码
-            </Button>
-            <Button className='' onClick={handleCreate}>
-              <Lightbulb size={14} className='mr-2' />创建我的套牌
-            </Button>
+          <div className='flex-0 actions flex justify-start items-center pt-2 sticky bottom-0 w-full bg-white z-20'>
+            <div className='flex-1 bg-slate-300 h-[36px] flex justify-start items-center'>
+              <a href='https://github.com/alfxjx' target='_blank' rel='noreferrer' className='pl-4 pr-2'><Github size={16} /></a>
+              <span className='text-sm text-blue-600 ml-2'>v{process.env.VERSION}</span>
+            </div>
+            <div className="flex flex-0 justify-end items-center">
+              <Button className='rounded-none' id='share-btn' data-clipboard-action="copy" data-clipboard-text={decodeURIComponent(code)} variant={'outline'}>
+                <Copy size={14} className='mr-2' />复制套牌
+              </Button>
+              <Button className='rounded-none' onClick={handleCreate}>
+                <Lightbulb size={14} className='mr-2' />创建套牌
+              </Button>
+            </div>
           </div>
         )
       }
