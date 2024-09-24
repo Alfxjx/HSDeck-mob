@@ -1,4 +1,4 @@
-import { encode as d_encode, decode as d_decode, DeckDefinition } from "deckstrings";
+import { encode as d_encode, decode as d_decode, DeckDefinition, FormatType } from "deckstrings";
 import { CardData } from "hearthstonejson-client";
 
 export interface IBaseDeckItem {
@@ -17,13 +17,14 @@ export interface IDeck {
         heroData: CardData;
         dbfid: number;
     }[];
-    format: number;
+    format: FormatType;
 }
 
 export type availableLocales = 'enUS' | 'zhCN';
 
 export function decode(deckString: string): DeckDefinition {
     const deck = d_decode(deckString);
+    console.log(deck);
     return deck;
 }
 

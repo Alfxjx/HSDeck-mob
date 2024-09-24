@@ -11,6 +11,7 @@ import { HsShare } from './components/HsShare';
 
 import './App.css'
 import { IDeck, parseDeck } from './decks/useDeck';
+import { FormatType } from 'deckstrings';
 
 function App() {
 
@@ -106,6 +107,27 @@ function App() {
 
   }
 
+  function parseFormat(format: FormatType | undefined) {
+    if (!format) return '';
+    /* FT_UNKNOWN = 0
+    FT_WILD = 1
+    FT_STANDARD = 2
+    FT_CLASSIC = 3
+    FT_TWIST = 4 */
+    switch (format) {
+      case 1:
+        return '未知';
+      case 2:
+        return '标准模式';
+      case 3:
+        return '经典模式';
+      case 4:
+        return '幻变模式';
+      default:
+        return '';
+    }
+  }
+
   return (
     <div className='flex flex-col items-center min-h-screen w-screen pt-4'>
 
@@ -121,7 +143,7 @@ function App() {
               deckName={deckName ? decodeURIComponent(deckName) : ''}
               userName={userName ? decodeURIComponent(userName) : ''}
               hero={parseHero(deckObj?.heroes[0].heroData.cardClass)}
-              format={deckObj?.format === 1 ? '标准模式' : '狂野模式'}
+              format={parseFormat(deckObj?.format)}
             />}
           </div>
         )}
