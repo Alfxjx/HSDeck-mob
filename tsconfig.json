@@ -31,6 +31,9 @@
   "include": [
     "src"
   ],
+  "exclude": [
+    "json_update.cjs"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
