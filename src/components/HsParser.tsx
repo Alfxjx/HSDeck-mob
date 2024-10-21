@@ -96,7 +96,7 @@ export function HsParser({ onCodeSubmit }: {
                             <FormItem>
                                 <FormLabel>作者</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Godgun" {...field} />
+                                    <Input placeholder="只解风情不解谜#5603" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
