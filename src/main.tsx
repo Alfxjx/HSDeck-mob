@@ -8,7 +8,7 @@ import {
 import { Toaster } from "@/components/ui/toaster"
 import './index.css'
 import { Code } from '@/pages/code.tsx';
-import { Editor } from '@/pages/editor.tsx';
+import { Editor } from '@/pages/editor/index.tsx';
 
 const router = createBrowserRouter([
   {

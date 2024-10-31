@@ -88,47 +88,49 @@ export function HsParser({ onCodeSubmit }: {
     return (
         <div className="mx-6 mt-8 flex flex-col items-center">
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
-                    <FormField
-                        control={form.control}
-                        name="userName"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>作者</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="只解风情不解谜#5603" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="deckName"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>卡组名称</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="名字越长战斗力越高" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="deckCode"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>卡组代码</FormLabel>
-                                <FormControl>
-                                    <Textarea placeholder="复制粘贴" rows={rows} {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <div className="space-y-2">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full flex flex-col sm:flex-row">
+                    <div className="flex-7 flex-grow mx-0 max-w-[400px] sm:mx-4">
+                        <FormField
+                            control={form.control}
+                            name="userName"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>作者</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="只解风情不解谜#5603" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="deckName"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>卡组名称</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="名字越长战斗力越高" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="deckCode"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>卡组代码</FormLabel>
+                                    <FormControl>
+                                        <Textarea placeholder="复制粘贴" rows={rows} {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                    <div className="space-y-2 flex-3">
                         <Button type="submit" className="w-full">解析代码</Button>
                         <Button type="button" onClick={handleReset} variant={'outline'} className="w-full">重置</Button>
                         <Button type="button" onClick={handleSample} variant={'outline'} className="w-full">加载示例</Button>

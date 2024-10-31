@@ -47,6 +47,20 @@ export async function getLatestJSON(locale: availableLocales = 'zhCN'): Promise<
     }
 }
 
+export async function getLatestCollectibleJSON(locale: availableLocales = 'zhCN'): Promise<CardData[]> {
+    try {
+        const response = await fetch(`/assets/cards/cards.collectible.${locale}.json`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('加载全部可收集卡组信息失败:', error);
+        throw error;
+    }
+}
+
 export function mapDbfIdtoCard(dbfId: number, cards: CardData[]): CardData | undefined {
     const card = cards.find(card => card.dbfId === dbfId);
     return card;

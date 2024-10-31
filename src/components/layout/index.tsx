@@ -49,7 +49,7 @@ export function LayoutKit({ children }: { children: React.ReactNode }) {
     return (
         <div
             className={cn(
-                "rounded-md flex flex-col md:flex-row bg-white dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+                "rounded-md flex flex-col md:flex-row bg-white dark:bg-neutral-800 w-full flex-1 max-w-full mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
                 "h-screen"
             )}
         >
