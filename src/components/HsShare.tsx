@@ -26,3 +26,21 @@ export function HsShare({ deckString, deckName, userName, format, hero }: IShare
         </div>
     )
 }
+
+export function HSQrcode({ deckString, deckName, userName }: IShareProps) {
+    const url = `${window.location.protocol}//${window.location.host}/?code=${encodeURIComponent(deckString)}&deckName=${encodeURIComponent(deckName ? deckName : '自定义套牌')}&userName=${encodeURIComponent(userName ? userName : '匿名')}`;
+    return <div className='flex justify-center'>
+        <QRCodeSVG value={url} />
+    </div>
+}
+
+export function HSInfo({ deckName, userName, format, hero }: IShareProps) {
+    return (
+        <div className="text-sm font-bold text-gray-700">
+            <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>卡组：{deckName ? deckName : '自定义套牌'}</p>
+            <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>作者： {userName ? userName : '匿名'} </p>
+            <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>类型： {hero + '@' + format} </p>
+            <p className='max-w-[200px] text-ellipsis overflow-hidden text-nowrap'>日期： {moment().format('YYYY-MM-DD')} </p>
+        </div>
+    )
+}

@@ -11,6 +11,10 @@ export interface IDeckItem extends IBaseDeckItem {
     sideboardCards: IBaseDeckItem[];
 }
 
+export interface IDeckOptions {
+    cols?: 1 | 2;
+}
+
 export interface IDeck {
     cards: IDeckItem[];
     heroes: {

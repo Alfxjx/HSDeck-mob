@@ -23,6 +23,7 @@
     "dom-to-image-more": "^3.4.5",
     "file-saver": "^2.0.5",
     "framer-motion": "^11.11.9",
+    "gridstack": "^11.0.1",
     "hearthstonejson-client": "^1.16.0",
     "hsdeck-mob": "file:",
     "html2canvas": "^1.4.1",
@@ -33,6 +34,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.26.2",
+    "swapy": "^0.4.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"

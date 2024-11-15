@@ -11,7 +11,7 @@ export function LayoutKit({ children }: { children: React.ReactNode }) {
     const links = [
         {
             label: "卡组解析器",
-            href: "/code",
+            href: "/",
             icon: (
                 <Hash />
             ),
@@ -56,7 +56,7 @@ export function LayoutKit({ children }: { children: React.ReactNode }) {
             <Sidebar open={open} setOpen={setOpen}>
                 <SidebarBody className="justify-between gap-10">
                     <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-                            {open ? <Logo /> : <LogoIcon />}
+                        {open ? <Logo /> : <LogoIcon />}
                         <div className="mt-8 flex flex-col gap-2">
                             {links.map((link, idx) => (
                                 <SidebarLink key={idx} link={link} />
