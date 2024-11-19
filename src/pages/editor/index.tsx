@@ -1,12 +1,20 @@
 import { getLatestCollectibleJSON, getLatestJSON } from "@/decks/useDeck"
 import { useEffect, useState } from "react"
+import EditableFileName from "./EditableFileName";
 
 const BASE_URL = 'https://art.hearthstonejson.com/v1/256x/';
 
 export function Editor() {
 
-    const [cards, setCards] = useState<any[]>([]);
+    const [deckName, setDeckName] = useState<string>('自定义套牌');
+    const [, setCards] = useState<any[]>([]);
     const [heros, setHeros] = useState<any[]>([]);
+
+    const handleSave = (newName: string) => {
+        if (deckName !== newName) {
+            setDeckName(newName);
+        }
+    };
 
     useEffect(() => {
         getLatestCollectibleJSON('zhCN').then(data => {
@@ -22,25 +30,31 @@ export function Editor() {
                         heropower
                     }
                 });
-            console.log(_heros);
             setHeros(_heros);
         })
     }, [])
 
     return (
         <div className="w-full h-screen overflow-hidden flex flex-col items-center justify-start">
-            <div className="flex flex-shrink-0 flex-grow-0 h-[200px] w-full bg-gray-100">已选择的卡</div>
-            <div className="flex flex-col flex-1 bg-slate-100 w-full">
-                <div className="flex flex-wrap">
+            <div className="flex items-center flex-shrink-0 flex-grow-0 w-full bg-gray-100 px-2 pb-4">
+                <EditableFileName initialName={deckName} onSave={handleSave} />
+            </div>
+            <div className="flex flex-col flex-1 bg-slate-100 w-full ">
+                {/* 职业 */}
+                <div className="overflow-x-scroll flex space-x-1 shadow px-2 py-1">
+                    <div className="w-12 h-12 rounded-full bg-indigo-500 text-gray-200 flex justify-center items-center flex-shrink-0">
+                        中立
+                    </div>
                     {
                         heros.map(hero => {
                             return (
-                                <div key={hero.dbfId} className="w-1/6 h-1/6">
+                                <div key={hero.dbfId} className="w-12 h-12 flex-shrink-0">
                                     <img src={`${BASE_URL}${hero.heropower.id}.webp`} alt={hero.name} className="rounded-full" />
                                 </div>
                             )
                         })
                     }
+
                 </div>
                 {/* {
                     cards.map(card => {
