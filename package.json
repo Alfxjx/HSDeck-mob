@@ -1,7 +1,7 @@
 {
   "name": "hsdeck-mob",
   "private": true,
-  "version": "31.2.2",
+  "version": "31.4.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
